@@ -30,7 +30,7 @@
             </div>
             <div class = "form-group">
               <label for = "password">Palavra-passe</label>
-              <input class = "form-control" id = "password"type="text"/>
+              <input class = "form-control" id = "password"type="password"/>
             </div>
             <button class = "btn btn-primary"type="button" name="button">Entrar</button>
           </form>
@@ -39,12 +39,14 @@
       </div>
     </div>
 
-
     <script type="text/javascript">
       <?php require "external/jquery.js"?>
     </script>
     <script type="text/javascript">
       <?php require "external/bootstrap/js/bootstrap.bundle.js"?>
+    </script>
+    <script type="text/javascript">
+      <?php require "scripts/login.js"?>
     </script>
   </body>
 </html>

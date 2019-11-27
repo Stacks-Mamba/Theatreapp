@@ -21,7 +21,7 @@ class Database{
 
   public static function getDatabase(){
     if(Database::$db==null){
-      Database::$db = new Database("localhost","theatre","root","");
+      Database::$db = new Database("localhost:3308","theatre","root","");
       return Database::$db;
     }
     return Database::$db;

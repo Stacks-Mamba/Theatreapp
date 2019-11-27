@@ -1,0 +1,121 @@
+body{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  background-color: #f2f2f2;
+}
+
+/*Estilos da secção principal*/
+#main{
+  position: absolute;
+  background-color: #f2f2f2;
+  left:15%;
+  padding-left: 20px;
+}
+
+
+#content{
+  margin-top:5%;
+}
+
+#content > p:nth-child(1){
+  position: relative;
+  top:30%;
+  margin-bottom:2.5%;
+}
+
+#content > button:nth-child(2){
+  position:relative;
+  float: right;
+  margin-bottom:2.5%;
+}
+
+form > button{
+  margin-top: 40px;
+}
+
+/*navbar*/
+#nav-bar a{
+  color:white;
+}
+
+#nav-bar > a{
+  margin-bottom:10px;
+}
+
+#nav-bar{
+  display:none;
+}
+
+
+
+/*Side bar stuff*/
+#side-bar{
+  position: fixed;
+  left:0%;
+  width:15%;
+  height: 100%;
+  z-index: 2;
+  background-color: #1c1b1d;
+}
+
+#side-bar > p{
+  position:relative;
+  margin-left:10%;
+  margin-top: 5%;
+  margin-right: 5%;
+}
+
+#side-bar > .icon-group{
+  position: relative;
+  margin-top: 5%;
+  margin-left:17%;
+  margin-right: 5%;
+}
+
+ul.nav{
+  position: relative;
+  top:10%;
+  margin-left:5%;
+}
+
+/*Estilos para itens individuais*/
+.icon{
+  position: relative;
+  top:5px;
+}
+.inline-block{display: inline-block;}
+
+.nav-link{padding:0px;}
+
+.nav-item{
+  display: block;
+  margin-bottom: 20px;
+  width:100%;
+}
+
+.nav-item a{
+  color: white;
+}
+
+
+@media (max-width: 768px) {
+
+  #main{
+    position: absolute;
+    background-color: #f2f2f2;
+    left:0%;
+    width: 100%;
+    height: 100%;
+  }
+
+  #side-bar,#side-bar *{
+    display: none;
+  }
+
+  #nav-bar{
+    display: flex;
+    margin-bottom: 5%;
+  }
+}

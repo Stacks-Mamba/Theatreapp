@@ -23,4 +23,10 @@
       <a class = "nav-link inline-block" href="../gestao/show">Gestão de Lugares</a>
     </div>
   </li>
+  <li class = "nav-item">
+    <div class = "my-menu-item">
+      <i class="material-icons md-24 md-light inline-block icon">toggle_off</i>
+      <a class = "nav-link inline-block" href="../logout">Terminar sessão</a>
+    </div>
+  </li>
 </ul>

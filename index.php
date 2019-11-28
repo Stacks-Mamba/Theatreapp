@@ -34,7 +34,14 @@ function verifySession($user){
   }
   else if(hasTimedOut()){
     session_destroy();
-    $redirect_message = "Não pode aceder essa página a sua sessão expirou<br/>
+    $redirect_message = "Não pode aceder essa página porque a sua sessão expirou<br/>
+    Aperte no link para ser redirecionado para a página login";
+    require BASE_PATH."Views/redirect.php";
+    exit();
+  }
+  else if($_SESSION["USERNAME"] != $user){
+    session_destroy();
+    $redirect_message = "Não pode aceder essa página porque não possui as permissões necessárias<br/>
     Aperte no link para ser redirecionado para a página login";
     require BASE_PATH."Views/redirect.php";
     exit();
@@ -53,7 +60,12 @@ if(count($uri)==3){
 }
 else if(count($uri)==4){
   if($uri[3]=="logout"){
+    //End session
+    unset($_SESSION["USERNAME"]);
+    session_destroy();
+    //go to logout
     header("location: http://127.0.0.1/TheatreApp/index.php",true,303);
+    exit();
   }
 }
 else if(count($uri)==5){

@@ -22,7 +22,7 @@
       </div>
       <button class = "btn btn-warning" type="button" name="button">Terminar sessão</button>
     </nav>
-    <img id = "background" class = "img-fluid" src="external/images/userbg.jpg" alt="alt"/>
+    <img id = "background" class = "img-fluid" src="../../Views/external/images/userbg.jpg" alt="alt"/>
     <div id = "main" class="container-fluid">
       <div id = "nav-row" class="row w-100">
 

@@ -20,7 +20,7 @@
         <i class="material-icons md-36 md-light icon">theaters</i>
         <a class="navbar-brand" href="#" aria-disabled="true">Havana Theatre</a>
       </div>
-      <button class = "btn btn-warning" type="button" name="button">Reserve já</button>
+      <button class = "btn btn-warning" type="button" name="button">Terminar sessão</button>
     </nav>
     <img id = "background" class = "img-fluid" src="external/images/userbg.jpg" alt="alt"/>
     <div id = "main" class="container-fluid">

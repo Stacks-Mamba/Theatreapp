@@ -2,7 +2,11 @@
 /*A classe LugarMapper serve como intermediário entre a classe lugar e a base de dados
 é usada para manter coesão da classe lugar e que classe lugar tenha muitas responsabilidade
 */
+/*require "../core/Database.php";
+require "Lugar.php";
+require "LugarBalcao.php";*/
 class LugarMapper{
+
   public static $BALCAO = "lugarbalcao";
   public static $PLATEIA = "lugarplateia";
 
@@ -64,7 +68,11 @@ class LugarMapper{
       $conn = $db->getConn();
       //Formatar a string da query com base na tabela que se quer
       $query = sprintf(LugarMapper::$GET_ALL,$table);
-      $result = $conn->query($query);
+      //Prepare statement
+      $stmt = $conn->prepare($query);
+      //Execute statement
+      $stmt->execute();
+      $result = $stmt->get_result();
       $db->closeConn();
       //Obter objectos a partir do resultado
       return LugarMapper::getObjects($result,$table);
@@ -81,8 +89,11 @@ class LugarMapper{
     if($db->openConn() and ($table==LugarMapper::$BALCAO or $table==LugarMapper::$PLATEIA)){
       $conn = $db->getConn();
       //Formatar a string da query com base na tabela que se quer
-      $query = sprintf(LugarMapper::$GET_BY_ID,$table,$id["fila"],$id["lugar"]);
-      $result = $conn->query($query);
+      //Prepare statement
+      $stmt = $conn->prepare($query);
+      //Execute statement
+      $stmt->execute();
+      $result = $stmt->get_result();
       $db->closeConn();
       //Obter objectos a partir do resultado
       return LugarMapper::getObjects($result,$table);
@@ -114,7 +125,11 @@ class LugarMapper{
           $conn->real_escape_string($lugar->getNumBalcao()),$lugar->isFumador());
           break;
       }
-      $result = $conn->query($query);
+      //Prepare statement
+      $stmt = $conn->prepare($query);
+      //Execute statement
+      $stmt->execute();
+      $result = $stmt->get_result();
       //Close the connection
       $db->closeConn();
       return $result;
@@ -133,7 +148,11 @@ class LugarMapper{
       $conn = $db->getConn();
       //Formatar a string da query com base na tabela que se quer
       $query = sprintf(LugarMapper::$DELETE,$table,$id["fila"],$id["lugar"]);
-      $result = $conn->query($query);
+      //Prepare statement
+      $stmt = $conn->prepare($query);
+      //Execute statement
+      $stmt->execute();
+      $result = $stmt->get_result();
       $db->closeConn();
       //Obter objectos a partir do resultado
       return $result;
@@ -157,7 +176,11 @@ class LugarMapper{
       else {
         $query = sprintf(LugarMapper::$UPDATE,$table,$data["vendido"],"protocolar",$data["protocolar"],$id["fila"],$id["lugar"]);
       }
-      $result = $conn->query($query);
+      //Prepare statement
+      $stmt = $conn->prepare($query);
+      //Execute statement
+      $stmt->execute();
+      $result = $stmt->get_result();
       $db->closeConn();
       //Obter objectos a partir do resultado
       return $result;
@@ -169,8 +192,10 @@ class LugarMapper{
 }
 
 /*function main(){
-  $id = array("fila"=>1,"lugar"=>1);
-  LugarMapper::getLugarById()
-}*/
+  $lm = new LugarMapper();
+  $result = $lm->getAllLugares(LugarMapper::$BALCAO);
+
+}
+*/
 
 ?>

@@ -26,13 +26,17 @@
             </div>
             <div class = "form-group">
               <label for = "username">Nome de utilizador</label>
-              <input class = "form-control" id = "username"type="text"/>
+              <input class = "form-control" id = "username"type="text" placeholder="Nome de utilizador"/>
+              <div class="invalid-feedback">
+              </div>
             </div>
             <div class = "form-group">
               <label for = "password">Palavra-passe</label>
-              <input class = "form-control" id = "password"type="password"/>
+              <input class = "form-control" id = "password"type="password" placeholder="Palavra-passe"/>
+              <div class="invalid-feedback">
+              </div>
             </div>
-            <button class = "btn btn-primary"type="button" name="button">Entrar</button>
+            <button id = "sendBtn" class = "btn btn-primary"type="button" name="button">Entrar</button>
           </form>
         </div>
         <div class="col-1 col-sm-2 col-md-3 col-lg-4"></div>

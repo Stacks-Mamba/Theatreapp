@@ -46,6 +46,7 @@ function verifySession($user){
     require BASE_PATH."Views/redirect.php";
     exit();
   }
+  $_SESSION["TIMESTAMP"] = time();
 }
 
 $uri =  explode("/",parse_url($_SERVER["REQUEST_URI"],PHP_URL_PATH));

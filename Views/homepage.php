@@ -20,7 +20,7 @@
         <i class="material-icons md-36 md-light icon">theaters</i>
         <a class="navbar-brand" href="#" aria-disabled="true">Havana Theatre</a>
       </div>
-      <button class = "btn btn-warning" type="button" name="button">Terminar sessão</button>
+      <a href="../logout"><button class = "btn btn-warning" type="button" name="button">Terminar sessão</button></a>
     </nav>
     <img id = "background" class = "img-fluid" src="../../Views/external/images/userbg.jpg" alt="alt"/>
     <div id = "main" class="container-fluid">
